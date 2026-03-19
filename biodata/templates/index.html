@@ -26,11 +26,24 @@
      <div class="container" id="biodataContainer">
         {% for anggota in anggota_list %}
         <div class="card">
-            <img src="{{ anggota.foto.url }}" alt="Foto {{ anggota.nama }}">
-            <h3>{{ anggota.nama }}</h3>
-            <p class="npm">NPM: {{ anggota.npm }}</p>
-            <p class="role">{{ anggota.role }}</p>
-            <span class="tag">DIGIDAW TEAM</span>
+            <div class="card-inner">
+                
+                <div class="card-front">
+                    <img src="{{ anggota.foto.url }}" alt="Foto {{ anggota.nama }}">
+                    <h3>{{ anggota.nama }}</h3>
+                    <p class="npm">NPM: {{ anggota.npm }}</p>
+                    <p class="role">{{ anggota.role }}</p>
+                    <span class="tag">DIGIDAW TEAM</span>
+                </div>
+
+                <div class="card-back">
+                    <h3>Halo👋</h3>
+                    <p>Saya adalah <strong>{{ anggota.role }}</strong> yang bangga menjadi bagian dari kelompok <strong>Digidaw</strong>.</p>
+                    <br>
+                    <span class="tag">{{ anggota.nama.split.0|upper }}</span>
+                </div>
+
+            </div>
         </div>
         {% endfor %}
     </div>
