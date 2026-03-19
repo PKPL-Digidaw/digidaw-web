@@ -23,7 +23,17 @@
     </div>
 
     <!-- BIODATA -->
-    <div class="container" id="biodataContainer"></div>
+     <div class="container" id="biodataContainer">
+        {% for anggota in anggota_list %}
+        <div class="card">
+            <img src="{{ anggota.foto.url }}" alt="Foto {{ anggota.nama }}">
+            <h3>{{ anggota.nama }}</h3>
+            <p class="npm">NPM: {{ anggota.npm }}</p>
+            <p class="role">{{ anggota.role }}</p>
+            <span class="tag">DIGIDAW TEAM</span>
+        </div>
+        {% endfor %}
+    </div>
 
     <!-- FOOTER -->
     <div class="footer">
