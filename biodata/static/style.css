@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #1f1f3a, #0f0f1a);
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#loginBtn {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#loginBtn:hover {
+    transform: scale(1.1);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    opacity: 0.7;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px;
+    flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 25px;
+    width: 230px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    top: -50%;
+    left: -50%;
+    transform: rotate(25deg);
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.05);
+}
+
+/* IMAGE */
+.card img {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #00c6ff;
+}
+
+/* TEXT */
+.card h3 {
+    margin: 10px 0 5px;
+}
+
+.npm {
+    font-size: 12px;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+.role {
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.5;
+}
+
+.tag {
+    font-size: 10px;
+    opacity: 0.5;
+    display: block;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
