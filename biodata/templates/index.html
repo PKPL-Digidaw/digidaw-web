@@ -4,22 +4,36 @@
 <head>
     <title>DIGIDAW</title>
 
-    <!-- CSS -->
+    <!-- CSS file -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
 
+    <!-- Dynamic theme -->
+    <style>
+    body {
+        font-family: {{ theme.font|default:"Poppins" }} !important;
+        color: {{ theme.color|default:"#ffffff" }} !important;
+    }
+    </style>
+
+</head>
 <body>
 
     <!-- NAVBAR -->
+
+
     <div class="navbar">
-        <div class="logo">DIGIDAW</div>
-        <button id="loginBtn">Login with Google</button>
+        <a href="/" class="logo">DIGIDAW</a>
+
+            <button id="editBtn" class="button">Edit</button>
+
+            <button id="loginBtn" class="button">Login with Google</button>
+
     </div>
 
     <!-- HERO -->
     <div class="hero">
-        <h1>Our Team</h1>
-        <p>Building secure and modern web applications</p>
+        <h1>Our Team</h1> <br>
+        <h2>Building secure and modern web applications</h2>
     </div>
 
     <!-- BIODATA -->
@@ -54,6 +68,7 @@
     </div>
 
     <!-- JS -->
+     {% load static %}
     <script src="{% static 'script.js' %}"></script>
 
 </body>

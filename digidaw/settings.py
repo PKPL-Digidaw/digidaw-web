@@ -63,6 +63,8 @@ SOCIALACCOUNT_PROVIDERS = {  # konfigurasi apa yang diminta Google saat user log
     }
 }
 
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
 # setelah login/logout berhasil, user akan diacdrahkan ke halaman utama
 LOGIN_REDIRECT_URL = '/'  
 LOGOUT_REDIRECT_URL = '/'  
