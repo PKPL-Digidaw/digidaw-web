@@ -24,10 +24,16 @@
     <div class="navbar">
         <a href="/" class="logo">DIGIDAW</a>
 
-            <button id="editBtn" class="button">Edit</button>
+        {% if is_member %}
+            <button id="editBtn" class="button" onclick="window.location.href='/edit/'">Edit</button>
+        {% endif %}
 
-            <button id="loginBtn" class="button">Login with Google</button>
-
+        {% if user.is_authenticated %}
+            <span style="color: white;">{{ user.email }}</span>
+            <a href="{% url 'account_logout' %}" class="button">Logout</a>
+        {% else %}
+            <a href="{% url 'google_login' %}" class="button">Login with Google</a>
+        {% endif %}
     </div>
 
     <!-- HERO -->

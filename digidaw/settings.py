@@ -56,18 +56,23 @@ AUTHENTICATION_BACKENDS = [  # untuk mengizinkan login dengan akun Google dan ak
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SOCIALACCOUNT_PROVIDERS = {  # konfigurasi apa yang diminta Google saat user login
+SOCIALACCOUNT_PROVIDERS = {
     'google': {
+        'APP': {
+            'client_id': os.getenv('GOOGLE_CLIENT_ID'),
+            'secret': os.getenv('GOOGLE_CLIENT_SECRET'),
+        },
         'SCOPE': ['profile', 'email'],
         'AUTH_PARAMS': {'access_type': 'online'},
     }
 }
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
+ACCOUNT_LOGOUT_ON_GET = True
 
 # setelah login/logout berhasil, user akan diacdrahkan ke halaman utama
 LOGIN_REDIRECT_URL = '/'  
-LOGOUT_REDIRECT_URL = '/'  
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
