@@ -24,9 +24,15 @@ body {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 2px;
+    text-decoration: none;
+    color: white;
 }
 
-#loginBtn {
+button, select, input {
+    font-family: inherit;
+}
+
+.button {
     background: linear-gradient(45deg, #00c6ff, #0072ff);
     border: none;
     padding: 10px 18px;
@@ -40,6 +46,15 @@ body {
     transform: scale(1.1);
 }
 
+#editBtn:hover {
+    transform: scale(1.1);
+}
+
+#editBtn {
+    padding: 10px 18px; 
+    font-size: 1rem;
+}
+
 /* HERO */
 .hero {
     text-align: center;
@@ -50,6 +65,16 @@ body {
     font-size: 48px;
     margin-bottom: 10px;
     background: linear-gradient(45deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #86d6ed, #62a3f3);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -144,6 +169,7 @@ body {
 
 /* FOOTER */
 .footer {
+    color: #0072ff;
     text-align: center;
     padding: 20px;
     opacity: 0.5;
@@ -166,4 +192,29 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+.edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.edit-box {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.edit-box input,
+.edit-box select {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
 }

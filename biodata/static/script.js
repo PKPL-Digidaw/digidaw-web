@@ -1,4 +1,9 @@
-// login button (placeholder OAuth)
-document.getElementById("loginBtn").addEventListener("click", () => {
-    alert("Login dengan Google akan diintegrasikan di sini");
-})
+// login
+document.getElementById("loginBtn")?.addEventListener("click", () => {
+    window.location.href = "/accounts/google/login/";
+});
+
+// edit
+document.getElementById("editBtn")?.addEventListener("click", () => {
+    window.location.href = "/edit/";
+});
