@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <!-- Dynamic theme -->
-    <style>
+     <style>
     body {
-        font-family: {{ theme.font|default:"Poppins" }} !important;
+        font-family: '{{ theme.font|default:"Poppins" }}', sans-serif !important;
         color: {{ theme.color|default:"#ffffff" }} !important;
     }
     </style>
@@ -19,20 +19,18 @@
 <body>
 
     <!-- NAVBAR -->
-
-
     <div class="navbar">
         <a href="/" class="logo">DIGIDAW</a>
-
         {% if is_member %}
-            <button id="editBtn" class="button" onclick="window.location.href='/edit/'">Edit</button>
+            <button id="editBtn" class="button" onclick="window.location.href='/edit/'/" style="position: absolute; left: 50%; transform: translateX(-50%);">Edit</button>
         {% endif %}
-
         {% if user.is_authenticated %}
-            <span style="color: white;">{{ user.email }}</span>
-            <a href="{% url 'account_logout' %}" class="button">Logout</a>
+            <div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+                <span style="color: white;">Hello, {{ user.email }}!</span>
+                <a href="{% url 'account_logout' %}" class="button">Logout</a>
+            </div>
         {% else %}
-            <a href="{% url 'google_login' %}" class="button">Login with Google</a>
+            <a href="{% url 'google_login' %}" class="button" style="margin-left: auto;">Login with Google</a>
         {% endif %}
     </div>
 

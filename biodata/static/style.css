@@ -28,6 +28,10 @@ body {
     color: white;
 }
 
+button, select, input {
+    font-family: inherit;
+}
+
 .button {
     background: linear-gradient(45deg, #00c6ff, #0072ff);
     border: none;
@@ -45,6 +49,12 @@ body {
 #editBtn:hover {
     transform: scale(1.1);
 }
+
+#editBtn {
+    padding: 10px 18px; 
+    font-size: 1rem;
+}
+
 /* HERO */
 .hero {
     text-align: center;
